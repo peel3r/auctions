@@ -1,0 +1,10 @@
+-unless @product.has_auction?
+  %h2 Put this product to auction
+
+  =form_for [ @product, Auction.new ] do |f|
+    %p
+      =f.text_field :value
+
+    %p
+      =f.datetime_select :ends_at
+      =f.button class: "btn btn-primary"
