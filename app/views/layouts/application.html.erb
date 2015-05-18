@@ -7,8 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+<%= render "nav" %>
+<div class="container">
+  <%= content_tag :div, alert, class:"flash bg-danger" if alert %>
+  <%=  content_tag :div, notice, class: "flash bg-succes" if notice %>
+  <%= yield %>
+</div>
 
 </body>
 </html>
