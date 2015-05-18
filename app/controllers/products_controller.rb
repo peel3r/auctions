@@ -24,7 +24,8 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-    @product = Product.new(product_params)
+
+    @product = Product.new(product_params.merge! user_id: current_user.id)
 
     respond_to do |format|
       if @product.save
