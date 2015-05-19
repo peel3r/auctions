@@ -12,3 +12,10 @@
   .col-md-6
     =render "auction"
     =render "bid"
+
+:javascript
+  App = {
+    websocket_url: "ws://#{request.host}:#{request.port}/"
+  };
+
+
